@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { calculateWinner } from './calculateWinner';
 import './index.css';
 
 function Square(props) {
@@ -41,8 +42,16 @@ class Board extends React.Component {
     );
   }
 
+  checkGame() {
+    const winner = calculateWinner(this.state.squares);
+    if (winner) {
+      return 'Winner: ' + winner;
+    }
+    return 'Next player: ' + this.nextPlayer();
+  }
+
   render() {
-    const status = 'Next player: ' + this.nextPlayer();
+    const status = this.checkGame();
 
     return (
       <div>
