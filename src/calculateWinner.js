@@ -1,3 +1,8 @@
+/**
+ * Given a list of squares, return the winner of the game
+ * @param squares - an array of the squares on the board.
+ * @returns The winner, or null if there is no winner.
+ */
 export function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
