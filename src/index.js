@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Board } from './board/Board';
-import { calculateWinner } from './calculateWinner';
+import { calculateWinner } from './helper/calculateWinner';
 import './index.css';
 
 class Game extends React.Component {
