@@ -11,11 +11,11 @@ class Game extends React.Component {
       history: [
         {
           squares: Array(9).fill(null),
-        }
+        },
       ],
       stepNumber: 0,
       xIsNext: true,
-    }
+    };
   }
 
   nextPlayer() {
@@ -39,9 +39,11 @@ class Game extends React.Component {
     }
     squares[i] = this.nextPlayer();
     this.setState({
-      history: history.concat([{
-        squares,
-      }]),
+      history: history.concat([
+        {
+          squares,
+        },
+      ]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
     });
@@ -50,7 +52,7 @@ class Game extends React.Component {
   jumpTo(step) {
     this.setState({
       stepNumber: step,
-      xIsNext: (step % 2) === 0,
+      xIsNext: step % 2 === 0,
     });
   }
 
